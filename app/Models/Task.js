@@ -14,6 +14,7 @@ export class Task {
       <label class="form-check-label" for="flexCheckDefault">
         ${this.toDo}
       </label>
+      <button><i class="mdi mdi-delete selectable" title="delete task" onclick="app.tasksController.deleteTask('${this.id}')"></i></button>
     </div>
     `
   }

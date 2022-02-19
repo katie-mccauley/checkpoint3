@@ -1,5 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { listsService } from "../Services/ListsService.js";
+import { loadState, saveState } from "../Utils/LocalStorage.js";
+import { Pop } from "../Utils/Pop.js";
 
 function _draw() {
   let template = ""
@@ -11,7 +13,10 @@ export class ListsController {
     console.log("this is lists controller");
     ProxyState.on("lists", _draw)
     ProxyState.on("tasks", _draw)
-    // _draw()
+    ProxyState.on("lists", saveState)
+    ProxyState.on("tasks", saveState)
+
+    loadState()
   }
 
   createList() {
@@ -23,13 +28,16 @@ export class ListsController {
       // @ts-ignore
       color: form.color.value
     }
-    console.log(rawTask);
+
     listsService.createTask(rawTask)
 
   }
 
-  deleteList(id) {
-    listsService.deleteList(id)
+  async deleteList(id) {
+    if (await Pop.confirm()) {
+      listsService.deleteList(id)
+    }
+
   }
 
 

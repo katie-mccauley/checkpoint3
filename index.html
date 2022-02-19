@@ -12,36 +12,53 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>checkpoint3</title>
+
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
 </head>
 
-<body>
+<body class="">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">checkpoint3</span>
+    <nav class="navbar navbar-dark navbar-expand bg-secondary text-light no-select">
+      <a class="navbar-brand ms-3 text-center" href="#">
+        <h2 class="">Task Master</h2>
       </a>
     </nav>
   </header>
-  <main>
-    <div class="container-fluid">
-      <form action="" onsubmit="app.listsController.createList()">
-        <div class="row">
-          <div class="col-3">
-            <input required type="text" class="form-control" name="name" id="name" placeholder="List name">
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <form action="" onsubmit="app.listsController.createList()">
+          <div class="m-3">
+            <div class="d-flex align-items-center justify-content-around">
+              <input required type="text" class="form-control bg-white" name="name" id="name" placeholder="List name">
+              <label class="" for="" class="form-label">Color</label>
+              <input required type="color" class="form-control" name="color" id="color" aria-describedby="helpId"
+                placeholder="">
+              <button class="p-3 py-1 btn-info rounded">Create</button>
+            </div>
           </div>
-          <div class="mb-3 col-3">
-            <label for="" class="form-label">Color</label>
-            <input required type="color" class="form-control" name="color" id="color" aria-describedby="helpId"
-              placeholder="">
-            <button class="col-2">Create</button>
-          </div>
-        </div>
-      </form>
-      <!-- this is the list with the tasks -->
-      <div class="row" id="test">
-        <!-- <div class="col-3 bg-white">
+        </form>
+      </div>
+    </div>
+    <!-- this is the list with the tasks -->
+    <div class="row" id="test">
+      <!-- <div class="col-3 bg-white">
           <div class="bg-secondary">
             <h2 class="text-light text-center">Laundry</h2>
           </div>
@@ -62,13 +79,13 @@
           </div>
 
         </div> -->
-      </div>
+    </div>
 
     </div>
   </main>
-  <footer class="bg-dark text-light">
+  <footer class="bg-secondary text-light">
     <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
+      <p><small>Made with 💖 by Katie McCauley</small></p>
     </div>
   </footer>
 

@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { tasksService } from "../Services/TasksService.js";
+import { Pop } from "../Utils/Pop.js";
 
 
 export class TasksController {
@@ -20,6 +21,12 @@ export class TasksController {
       listId
     }
     tasksService.createTask(rawTask)
+  }
+
+  async deleteTask(id) {
+    if (await Pop.confirm()) {
+      tasksService.deleteTask(id)
+    }
   }
 
 

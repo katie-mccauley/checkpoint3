@@ -9,7 +9,7 @@ export class List {
   }
 
   get Template() {
-    return `<div class="col-3 bg-white">
+    return `<div class="col-3 ">
     <div style="background-color:${this.color}">
       <h2 class="text-dark text-center">${this.name}</h2>
       <i class="mdi mdi-delete selectable"  title="delete list" onclick="app.listsController.deleteList('${this.id}')" ></i>
