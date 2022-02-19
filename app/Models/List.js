@@ -20,7 +20,7 @@ export class List {
       </div>
       <form onsubmit="app.tasksController.createTask('${this.id}')">
         <div class="col-md-6">
-          <input type="text" id="toDo" name="toDo" class="form-control" id="validationDefault03" required>
+          <input type="text" id="toDo" name="toDo" class="form-control" id="validationDefault03" required minlength="3" maxlength="50">
           <button class="btn btn-outline-secondary" id="button-addon2" type="submit" ><i
               class="mdi mdi-plus"></i></button>
         </div>

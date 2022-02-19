@@ -33,7 +33,7 @@
 </head>
 
 <body class="">
-  <header>
+  <header class="">
     <nav class="navbar navbar-dark navbar-expand bg-secondary text-light no-select">
       <a class="navbar-brand ms-3 text-center" href="#">
         <h2 class="">Task Master</h2>
@@ -46,7 +46,8 @@
         <form action="" onsubmit="app.listsController.createList()">
           <div class="m-3">
             <div class="d-flex align-items-center justify-content-around">
-              <input required type="text" class="form-control bg-white" name="name" id="name" placeholder="List name">
+              <input required minlength="3" maxlength="15" type="text" class="form-control bg-white" name="name"
+                id="name" placeholder="List name">
               <label class="" for="" class="form-label">Color</label>
               <input required type="color" class="form-control" name="color" id="color" aria-describedby="helpId"
                 placeholder="">
