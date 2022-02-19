@@ -1,9 +1,18 @@
+import { List } from "./Models/List.js"
+import { Task } from "./Models/Task.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
+
+// let fakeList = new List("Laundry", "blue")
+// let fakeTask = new Task("folding clothes")
 class AppState extends EventEmitter {
-  /** @type {import('./Models/Value').Value[]} */
-  values = []
+  /** @type {import('./Models/List').List[]} */
+
+  lists = []
+
+  /** @type {import('./Models/Task').Task[]} */
+  tasks = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
