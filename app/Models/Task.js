@@ -1,3 +1,4 @@
+import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/generateId.js"
 
 export class Task {
@@ -9,13 +10,15 @@ export class Task {
 
   get taskTemplate() {
     return `
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <div class="form-check col-12">
+      <input class="form-check-input" type="checkbox" value="" id="toDoTask">
       <label class="form-check-label" for="flexCheckDefault">
         ${this.toDo}
       </label>
-      <button><i class="mdi mdi-delete selectable" title="delete task" onclick="app.tasksController.deleteTask('${this.id}')"></i></button>
+      <i class="mdi mdi-delete selectable" title="delete task" onclick="app.tasksController.deleteTask('${this.id}')"></i>
     </div>
     `
   }
+
+
 }
