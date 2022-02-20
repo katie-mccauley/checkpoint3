@@ -28,7 +28,7 @@ export class ListsController {
       // @ts-ignore
       color: form.color.value
     }
-
+    form.reset()
     listsService.createTask(rawTask)
 
   }

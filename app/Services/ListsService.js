@@ -9,8 +9,8 @@ class ListsService {
   }
 
   deleteList(id) {
-    ProxyState.lists = ProxyState.lists.filter(t => t.id != id)
-
+    ProxyState.lists = ProxyState.lists.filter(t => t.id !== id)
+    ProxyState.tasks = ProxyState.tasks.filter(t => t.listId !== id)
   }
   constructor() {
     console.log("this is the lists service");

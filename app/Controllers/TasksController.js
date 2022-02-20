@@ -18,9 +18,14 @@ export class TasksController {
     const rawTask = {
       // @ts-ignore
       toDo: form.toDo.value,
-      listId
+      listId,
+      checked: false
     }
     tasksService.createTask(rawTask)
+  }
+
+  completeTask(id) {
+    tasksService.completeTask(id)
   }
 
   async deleteTask(id) {
@@ -28,6 +33,7 @@ export class TasksController {
       tasksService.deleteTask(id)
     }
   }
+
 
 
 }
