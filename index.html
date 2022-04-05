@@ -42,17 +42,29 @@
   </header>
   <main class="container-fluid">
     <div class="row">
-      <div class="col-12">
+      <div class="col-md-7">
         <form action="" onsubmit="app.listsController.createList()">
           <div class="m-3">
-            <div class="d-flex align-items-center justify-content-around">
-              <input required minlength="3" maxlength="15" type="text" class="form-control bg-white" name="name"
-                id="name" placeholder="List name" title="Add List">
-              <label class="" for="" class="form-label">Color</label>
-              <input required type="color" class="form-control" name="color" id="color" aria-describedby="helpId"
-                placeholder="" value="#FF0000">
-              <button class="p-3 py-1 btn-info rounded">Create</button>
+            <div class="row">
+              <div class="d-flex align-items-center justify-content-around">
+
+                <label class="col-md-1 mb-0 me-3" for="" class="form-label">
+                  <h5 class="mb-0">List Name</h5>
+                </label>
+
+                <input required minlength="3" maxlength="15" type="text" class="form-control bg-white shadow"
+                  name="name" id="name" placeholder="List name" title="Add List">
+                <label class="ms-3 me-1" for="" class="form-label">
+                  <h5 class="mb-0">Color</h5>
+                </label>
+                <input required type="color" class="form-control form-control-color me-3 shadow" name="color" id="color"
+                  aria-describedby="helpId" placeholder="" value="#9877CA">
+                <button class="p-3 py-1 btn-info btn rounded shadow">
+                  <h5 class="fw-bold mb-0">Create</h5>
+                </button>
+              </div>
             </div>
+
           </div>
         </form>
       </div>
